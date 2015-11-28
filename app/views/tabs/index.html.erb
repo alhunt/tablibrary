@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tabs</h1>
+<div class="container">
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>Artist</th>
+				<th>Title</th>
+				<th>Tab content</th>
+				<th colspan="3"></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% @tabs.each do |tab| %>
+				<tr>
+					<td><%= tab.artist %></td>
+					<td width="70%"><%= link_to tab.title, tab %></td>
+					<td><%= link_to 'Edit', edit_tab_path(tab) %></td>
+					<td><%= link_to 'Delete', tab, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>
+<br>
+
+<%= link_to 'New Tab', new_tab_path %>

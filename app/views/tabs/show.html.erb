@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+<div class="row">
+	<div class="col-md-4">
+		<div class="panel panel-default">
+			<div class="panel-heading">Tab Library</div>
+			<div class="panel panel-body">
+				<ul class="list-unstyled">
+					<% @tabs.each do |tab| %>
+						<li><%= link_to tab.artist + " - " + tab.title, tab %></li>
+					<% end %>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-8">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<%= @tab.artist %>
+				<%= @tab.title %>
+				<%= link_to 'Edit', edit_tab_path(@tab), class: "btn btn-default btn-sm" %>
+				<%= link_to 'Back', tabs_path %>
+				<%= link_to 'Play', '#', onclick: '$("html, body").animate({ scrollTop: 2000 }, 60000);', class: "btn btn-default btn-sm" %>
+			</div>
+			<div class="panel-body">
+				<p class="tab">	
+					<%= @tab.tab_content.gsub(/\n/, '<br/>').html_safe %>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
