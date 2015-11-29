@@ -19,7 +19,7 @@
 				<%= @tab.title %>
 				<%= link_to 'Edit', edit_tab_path(@tab), class: "btn btn-default btn-sm" %>
 				<%= link_to 'Back', tabs_path %>
-				<%= link_to 'Play', '#', onclick: '$("html, body").animate({ scrollTop: 2000 }, 60000);', class: "btn btn-default btn-sm" %>
+				<%= link_to 'Play', '#', id: "playButton", class: "btn btn-default btn-sm" %>
 			</div>
 			<div class="panel-body">
 				<p class="tab">	
@@ -29,3 +29,9 @@
 		</div>
 	</div>
 </div>
+<nav class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+	  <%= link_to 'Play', '#', class: "btn btn-default btn-sm playButton" %>
+	  <%= link_to 'Pause', '#', class: "btn btn-default btn-sm pauseButton" %>
+  </div>
+</nav>
