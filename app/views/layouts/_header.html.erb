@@ -8,5 +8,9 @@
 				<li><%= link_to "Library", tabs_path %></li>
 				<li><%= link_to "Sign in", '/signin' %></li>
 			</ul>
+			<div class="container">
+				<%= link_to 'Play', '#', class: "btn btn-default btn-sm navbar-btn playButton" %>
+				<%= link_to 'Pause', '#', class: "btn btn-default btn-sm navbar-btn pauseButton" %>
+			</div>
 	</div>
 </nav>
